@@ -22,7 +22,7 @@ public class Product {
         Nello stesso package aggiungete una classe Main con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
         */
 
-    Random random = new Random();
+
 
     // ATTRIBUTI
     private int code;
@@ -35,7 +35,7 @@ public class Product {
     // COSTRUTTORI
 
     public Product ( String name, String description, double price){
-        this.code = random.nextInt(20) + 1;
+        this.code = getRandomNumber();
         this.name = name;
         this.description = description;
         this.price = price;
@@ -46,6 +46,11 @@ public class Product {
     // METODI
     public String getCode() {
         return String.format("%06d", this.code);
+    }
+
+    public int getRandomNumber(){
+        Random random = new Random();
+        return random.nextInt(20) + 1;
     }
 
     public String getName() {
